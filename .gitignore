@@ -1,2 +1,42 @@
-*.DS_Store
-*.sav
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# macOS metadata
+.Spotlight-V100
+.Trashes
+.fseventsd
+.apdisk
+
+# VS Code
+.vscode/
+.history/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.venv/
+env/
+venv/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+.Ruserdata
+
+# MATLAB
+*.asv
+*.mex*
+*.fig
+
+# Logs
+*.log
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
