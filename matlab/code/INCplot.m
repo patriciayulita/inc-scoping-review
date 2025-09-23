@@ -4,7 +4,7 @@ clear;
 
 path_to_input_folder = '../data';
 
-path_to_output_folder = '../result';
+path_to_output_folder = '../result_paper';
 
 dataframe_file = 'dataFrame_final.csv';
 
