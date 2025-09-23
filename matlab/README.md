@@ -63,3 +63,7 @@ Running the script generates:
   - `Study_site_horizontal_title.png`
   - `Study_site_horizontal.png`
   - `Study_site.png`
+
+  ## Summary
+
+This matlab folder provides a fully automated pipeline for generating descriptive summaries and publication-ready visualisations based on the extracted dataset.
