@@ -28,11 +28,6 @@ var = dataframe{:,columnsToExtract}; % extract all rows of the column of interes
 % create the table
 countryTable = table(var(:,1), var(:,2),'VariableNames',{'Country1','Country2'}); % creating the table
 
-% save the table into excel file
-table_name = 'Country.csv';
-
-writetable(countryTable,strcat(path_to_output_folder, '/',table_name));
-
 var = categorical(var); % convert array to categorical
 [N,categories] = histcounts(var); % counts the frequency of each category
 
@@ -277,10 +272,6 @@ dataframe_f(:,all(ismissing(dataframe_f)))=[];
 %% sample size (n=44 reports containing analysable EEG details)
 
 var = rmmissing(dataframe_f.SampleSize);
-
-% save the table
-table_name = 'sampleSize.csv';
-writematrix(var, strcat(path_to_output_folder, '/', table_name));
 
 medianSampleSize = quantile(var,0.5); % median
 p25ss = quantile(var,0.25);  % lower quartile
@@ -731,10 +722,6 @@ exportgraphics(gcf,strcat(path_to_output_folder, '/', fig_name))
 
 % generate new variable for data loss percentage
 dataframe_f.DataLossPercentage = (dataframe_f.NumDataLossQualityIssue ./ dataframe_f.SampleSize) * 100;
-
-% save the table
-table_name = 'dataFrame_f_dlp.csv';
-writetable(dataframe_f, strcat(path_to_output_folder, '/', table_name));
 
 % calculate the median of data loss percentage
 var = rmmissing(dataframe_f.DataLossPercentage);
