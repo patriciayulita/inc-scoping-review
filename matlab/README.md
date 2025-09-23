@@ -11,7 +11,7 @@ matlab/
 ├── code/
 │   └── setup_working_dir.m     # Script to set up working directory
 │   └── INCplot.m               # Main script to run the analysis 
-│   └── raincloud_plot_PG.m     # Function to create raincloud plots (https://github.com/RainCloudPlots/RainCloudPlots.git)
+│   └── raincloud_plot_PG.m     # Function to create raincloud plots (https://github.com/RainCloudPlots/RainCloudPlots.git), modified for visualisation
 ├── data/
 │   └── dataFrame_final.csv     # Dataset used in the analysis
 └── result/                     # Created automatically when the script is run
