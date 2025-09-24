@@ -2,6 +2,13 @@
 
 clear;
 
+% Get path of current script
+tmp = matlab.desktop.editor.getActive;
+cd(fileparts(tmp.Filename));
+
+% Confirm
+disp(['Working directory set to: ', pwd]);
+
 path_to_input_folder = '../data';
 
 path_to_output_folder = '../result_paper';
