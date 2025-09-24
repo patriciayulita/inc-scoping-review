@@ -20,7 +20,7 @@ Each folder contains its own `README.md` file with detailed usage instructions.
 1. Start with the `matlab/` folder:
    - Run the main analysis script to generate all summary statistics and outputs.
 
-3. Explore the `vosviewer/` folder:
+2. Explore the `vosviewer/` folder:
    - Recreate or view the co-authorship network from the included `.ris` file or the exported map and network files.
    - Instructions are provided to reproduce the version used in the thesis.
 
