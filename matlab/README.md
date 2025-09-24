@@ -9,7 +9,6 @@ The analysis is designed to be run in a single step. All figures and tables will
 ```
 matlab/
 ├── code/
-│   └── setup_working_dir.m     # Script to set up working directory
 │   └── INCplot.m               # Main script to run the analysis of geographical distribution, publication year, and reports containing analysable EEG details 
 │   └── raincloud_plot_PG.m     # Function to create raincloud plots (https://github.com/RainCloudPlots/RainCloudPlots.git), modified for visualisation
 │   └── INCplot_ctrial.m        # Main script to run the analysis of clinical trial registrations 
@@ -22,9 +21,8 @@ matlab/
 
 ## How to use this folder
 
-1. Open `setup_working_dir.m` in MATLAB. Run the script. This sets the correct working directory. If a pop-up message appear asking to change working directory or add to path, choose change working directory.
-2. Open `INCplot.m` in MATLAB. Run the script. All outputs will be saved to the `result_paper/` folder.
-3. Open `INCplot_ctrial.m` in MATLAB. Run the script. All outputs will be saved to the `result_ctrial/` folder.
+1. Open `INCplot.m` in MATLAB. Run the script. If a pop-up message appear asking to change working directory or add to path, choose change working directory. All outputs will be saved to the `result_paper/` folder.
+2. Open `INCplot_ctrial.m` in MATLAB. Run the script. All outputs will be saved to the `result_ctrial/` folder.
 
 ## Output files and usage
 
