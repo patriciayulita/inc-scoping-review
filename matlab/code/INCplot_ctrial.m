@@ -89,9 +89,9 @@ set(gca, 'ytick', [], 'yticklabel', []);
 xlim([0 sum(Nage)]);
 
 % Add labels
-text(Nage(1)/2, 0, 'Preterm', 'VerticalAlignment', 'middle', 'HorizontalAlignment', 'center', 'Color', 'white', 'FontSize', 12);
-text(Nage(1) + Nage(2)/2, 0, 'Term', 'VerticalAlignment', 'middle', 'HorizontalAlignment', 'center', 'Color', 'white', 'FontSize', 12);
-text(Nage(1) + Nage(2) + Nage(3)/2, 0, 'Preterm and term', 'VerticalAlignment', 'middle', 'HorizontalAlignment', 'center', 'Color', 'white', 'FontSize', 12);
+text(Nage(1)/2, 0, 'Preterm', 'VerticalAlignment', 'middle', 'HorizontalAlignment', 'center', 'Color', 'white', 'FontSize', 13);
+text(Nage(1) + Nage(2)/2, 0, 'Term', 'VerticalAlignment', 'middle', 'HorizontalAlignment', 'center', 'Color', 'white', 'FontSize', 13);
+text(Nage(1) + Nage(2) + Nage(3)/2, 0, 'Preterm and term', 'VerticalAlignment', 'middle', 'HorizontalAlignment', 'center', 'Color', 'white', 'FontSize', 13);
 
 % Add title
 title('Age criteria');
@@ -127,6 +127,9 @@ N_all_padded = vertcat(N_all_padded{:});
 figure;
 h = barh(categories_all,N_all_padded,'stacked');
 
+% Set axis font size
+set(gca, 'FontSize', 14);
+
 % Customize the axes
 xlabel('Number of clinical trial registrations');
 title('Registrations distribution by various categories');
@@ -142,7 +145,7 @@ for k = 1:size(N_all_padded, 1)
         if N_all_padded(k, i) > 0
             x_coord = x_offset + N_all_padded(k, i) / 2;
             y_coord = k;
-            text(x_coord, y_coord, sub_labels{i}, 'VerticalAlignment', 'middle', 'HorizontalAlignment', 'center', 'Color', 'white', 'FontSize', 12);
+            text(x_coord, y_coord, sub_labels{i}, 'VerticalAlignment', 'middle', 'HorizontalAlignment', 'center', 'Color', 'white', 'FontSize', 13);
             x_offset = x_offset + N_all_padded(k, i); % Update x_offset for the next label
         end
     end
@@ -167,12 +170,20 @@ figure;
 barh(N_cps);
 yticks(1:numel(categoriesSorted_cps));
 yticklabels(categoriesSorted_cps);
-xlim([0,max(N_cps)+2]);
+xlim([0,max(N_cps)+1]);
+
+% Set axis font size
+set(gca, 'FontSize', 14);
+
+for i = 1:numel(N_cps)
+    text(N_cps(i) + 0.1, i, string(N_cps(i)), 'VerticalAlignment','middle', 'FontSize',14);
+end
 grid on;
+
 % name the x and y axis of subplot 1
 ylabel("Clinical pain scale")
 xlabel("Frequency")
-title("Clinical pain scales recorded alongside EEG")
+title("Clinical pain scales recorded alongside EEG", 'FontSize', 15)
 
 % save the figure
 fig_name = 'Clinical_pain_scale_ctr, horizontal.png';
@@ -193,17 +204,23 @@ figure;
 barh(N_neeg);
 yticks(1:numel(categoriesSorted_neeg));
 yticklabels(categoriesSorted_neeg);
-xlim([0,max([N_cps,N_neeg])+2]);
+xlim([0,max([N_cps,N_neeg])+1]);
+
+% Set axis font size
+set(gca, 'FontSize', 14);
+
+for i = 1:numel(N_neeg)
+    text(N_neeg(i) + 0.1, i, string(N_neeg(i)), 'VerticalAlignment','middle', 'FontSize',14);
+end
 grid on;
+
 % name the x and y axis of subplot 2
 ylabel("Non-EEG recording")
 xlabel("Frequency")
-title("Non-EEG measures recorded alongside EEG")
-
+title("Non-EEG measures recorded alongside EEG", 'FontSize', 15)
 
 % maximize the figure to cover the entire screen
-set(gcf, 'Units', 'normalized', 'OuterPosition', [0.2, 0.2, 0.70, 0.50]);
-
+set(gcf, 'Units', 'normalized', 'OuterPosition', [0.2, 0.2, 0.55, 0.65]);
 
 % save the figure
 fig_name = 'Non_EEG_recording_ctr, horizontal.png';
