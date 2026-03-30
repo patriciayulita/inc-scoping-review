@@ -456,8 +456,12 @@ figure;
 bar(N_st);
 xticks(1:numel(categories_st));
 xticklabels(categories_st(idx_st));
+
+% Set axis font size
+set(gca, 'FontSize', 14);
+
 for i = 1:numel(N_st)
-    text(i, N_st(i), cellstr(num2str(N_st(i))), 'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom');
+    text(i, N_st(i), cellstr(num2str(N_st(i))), 'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom','FontSize',14);
 end
 ylim([0,max(N_st)+3]);
 grid on;
@@ -493,8 +497,12 @@ figure;
 bar(N_bl);
 xticks(1:numel(categories_bl));
 xticklabels(categories_bl(idx_bl));
+
+% Set axis font size
+set(gca, 'FontSize', 14);
+
 for i = 1:numel(N_bl)
-    text(i, N_bl(i), cellstr(num2str(N_bl(i))), 'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom');
+    text(i, N_bl(i), cellstr(num2str(N_bl(i))), 'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom','FontSize',14);
 end
 ylim([0,max(N_bl)+2]);
 grid on;
@@ -509,7 +517,7 @@ fig_name = 'Body_location.png';
 % save the figure
 exportgraphics(gcf,strcat(path_to_output_folder, '/', fig_name))
 
-%% plot horizontal stimulus type and body location side by side
+%% plot horizontal stimulus type and body location one under the other
 % (note: this command can only be run after running the section for
 % stimulus type and for body location)
 
@@ -535,8 +543,12 @@ yticks(1:numel(categories_st));
 yticklabels(categories_st(idx_st));
 xticks(0:5:max(N_st)+3);
 xlim([0,max(N_st)+3]);
+
+% Set axis font size
+set(gca, 'FontSize', 14);
+
 for i = 1:numel(N_st)
-    text(N_st(i) + 0.2, i, string(N_st(i)), 'VerticalAlignment','middle');
+    text(N_st(i) + 0.2, i, string(N_st(i)), 'VerticalAlignment','middle','FontSize', 14);
 end
 grid on;
 % name the x and y axis of subplot 1
@@ -550,17 +562,21 @@ yticks(1:numel(categories_bl));
 yticklabels(categories_bl(idx_bl));
 xticks(0:5:max(N_bl)+3);
 xlim([0,max(N_bl)+3]);
+
+% Set axis font size
+set(gca, 'FontSize', 14);
+
 for i = 1:numel(N_bl)
-    text(N_bl(i) + 0.2, i, string(N_bl(i)), 'VerticalAlignment','middle');
+    text(N_bl(i) + 0.2, i, string(N_bl(i)), 'VerticalAlignment','middle','FontSize', 14);
 end
 grid on;
 % name the x and y axis of subplot 2
 ylabel("Body location")
 xlabel("Frequency")
 
-% % maximize the figure to cover the entire screen
-% set(gcf, 'Units', 'normalized', 'OuterPosition', [0.2, 0.2, 0.70, 0.50]);
-% 
+% maximize the figure to cover the entire screen
+set(gcf, 'Units', 'normalized', 'OuterPosition', [0.2, 0.2, 0.45, 0.70]);
+
 % save the figure
 fig_name = 'Stimulus_type,Body_location_horizontal.png';
 
@@ -827,8 +843,12 @@ yticks(1:numel(categories(idx)));
 yticklabels(categories(idx));
 xticks(0:1:max(N)+1);
 xlim([0,max(N)+1]);
+
+% Set axis font size
+set(gca, 'FontSize', 14);
+
 for i = 1:numel(N)
-    text(N(i) + 0.1, i, string(N(i)), 'VerticalAlignment','middle');
+    text(N(i) + 0.1, i, string(N(i)), 'VerticalAlignment','middle', 'FontSize', 14);
 end
 grid on;
 
@@ -860,8 +880,12 @@ yticks(1:numel(categoriesSorted_cps));
 yticklabels(categoriesSorted_cps);
 xticks(0:1:max(N_cps)+1);
 xlim([0,max(N_cps)+1]);
+
+% Set axis font size
+set(gca, 'FontSize', 14);
+
 for i = 1:numel(N_cps)
-    text(N_cps(i) + 0.1, i, string(N_cps(i)), 'VerticalAlignment','middle');
+    text(N_cps(i) + 0.1, i, string(N_cps(i)), 'VerticalAlignment','middle', 'FontSize',14);
 end
 grid on;
 
@@ -893,8 +917,12 @@ barh(N_neeg);
 yticks(1:numel(categoriesSorted_neeg));
 yticklabels(categoriesSorted_neeg);
 xlim([0,max(N_neeg)+2]);
+
+% Set axis font size
+set(gca, 'FontSize', 14);
+
 for i = 1:numel(N_neeg)
-    text(N_neeg(i) + 0.2, i, string(N_neeg(i)), 'VerticalAlignment','middle');
+    text(N_neeg(i) + 0.2, i, string(N_neeg(i)), 'VerticalAlignment','middle', 'FontSize', 14);
 end
 grid on;
 
@@ -904,6 +932,9 @@ xlabel("Frequency");
 
 % add title
 title("Non-EEG measures recorded alongside EEG")
+
+% scale the figure
+set(gcf, 'Units', 'normalized', 'OuterPosition', [0.2, 0.1, 0.50, 0.7]);
 
 % save the figure
 fig_name = 'Non_EEG_recording_horizontal.png';
