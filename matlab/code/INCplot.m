@@ -860,6 +860,9 @@ yticks(1:numel(categoriesSorted_cps));
 yticklabels(categoriesSorted_cps);
 xticks(0:1:max(N_cps)+1);
 xlim([0,max(N_cps)+1]);
+for i = 1:numel(N_cps)
+    text(N_cps(i) + 0.1, i, string(N_cps(i)), 'VerticalAlignment','middle');
+end
 grid on;
 
 % name the x and y axis of the figure
