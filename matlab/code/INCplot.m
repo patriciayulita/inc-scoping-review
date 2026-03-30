@@ -893,6 +893,9 @@ barh(N_neeg);
 yticks(1:numel(categoriesSorted_neeg));
 yticklabels(categoriesSorted_neeg);
 xlim([0,max(N_neeg)+2]);
+for i = 1:numel(N_neeg)
+    text(N_neeg(i) + 0.2, i, string(N_neeg(i)), 'VerticalAlignment','middle');
+end
 grid on;
 
 % name the x and y axis of the figure
