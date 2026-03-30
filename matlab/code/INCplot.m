@@ -732,13 +732,13 @@ pText(2).String = combinedtext(2);
 pText(3).String = combinedtext(3);
 pText(4).String = combinedtext(4);
 
-set(findobj(p,'type','text'),'fontsize',10);
+set(findobj(p,'type','text'),'fontsize',15);
 
 % Create legend
-legend(cat,'Location','bestoutside','FontSize',12);
+legend(cat,'Location','bestoutside','FontSize',15);
 
 % add title
-title("Epoch rejection method",'FontSize',14)
+title("Epoch rejection method",'FontSize',16)
 
 % save the figure
 fig_name = 'Epoch_rejection_method.png';
@@ -763,9 +763,13 @@ rows_with_non_nan_dlp = sum(~isnan(dataframe_f{:,'DataLossPercentage'}));
 
 % create raincloud plot for data loss percentage
 figure;
-raincloud_plot_PG(var, 'color', [0.15 0.37 0.61], 'band_width', [0.2], 'xlim_ks', [-1 50], 'box_on', 1, 'box_dodge', 1, 'cloud_edge_col', [0.15 0.37 0.61], 'lwr_bnd',[0.8]);
-xticks(0:5:50);
-xlim([0,50]);
+raincloud_plot_PG(var, 'color', [0.15 0.37 0.61], 'band_width', [0.2], 'xlim_ks', [-1 45], 'box_on', 1, 'box_dodge', 1, 'cloud_edge_col', [0.15 0.37 0.61], 'lwr_bnd',[0.8]);
+xticks(0:5:45);
+xlim([0,45]);
+
+% Set axis font size
+set(gca, 'FontSize', 14);
+
 xlabel("Percentage of data loss")
 
 % Remove default y-tick marks and labels
@@ -776,7 +780,7 @@ yticklabels({});     % Set y-tick labels to empty cell array
 set(gcf, 'Units', 'normalized', 'OuterPosition', [0.3, 0.3, 0.45, 0.30]);
 
 % add title
-title("Data loss due to artefacts")
+title("Data loss due to artefacts",'FontSize',16)
 
 % save the figure
 fig_name = 'data_loss_percentage.png';
@@ -814,13 +818,13 @@ pText(2).String = combinedtext(2);
 pText(3).String = combinedtext(3);
 %pText(4).String = combinedtext(4);
 
-set(findobj(p,'type','text'),'fontsize',8);
+set(findobj(p,'type','text'),'fontsize',15);
 
 % Create legend
-legend(categories,'Location','bestoutside','FontSize',12);
+legend(categories,'Location','bestoutside','FontSize',15);
 
 % add title
-title("EEG outcome domain",'FontSize',14)
+title("EEG outcome domain",'FontSize',16)
 
 % save the figure
 fig_name = 'Outcome_domain_pie_counts.png';
