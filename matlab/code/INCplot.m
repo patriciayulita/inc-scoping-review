@@ -243,8 +243,12 @@ bar(N);
 xticks(1:numel(categories));
 xticklabels(categories);
 yticks(0:2:numel(N));
+
+% Set axis font size
+set(gca, 'FontSize', 14);
+
 for i = 1:numel(N)
-    text(i, N(i), cellstr(num2str(N(i))), 'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom');
+    text(i, N(i), cellstr(num2str(N(i))), 'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom','FontSize', 14);
 end
 ylim([0,max(N)+1]);
 grid on;
@@ -262,7 +266,7 @@ fig_name = 'Number_of_published_studies_by_year.png';
 exportgraphics(gcf,strcat(path_to_output_folder, '/', fig_name))
 
 % add title
-title("Number of published studies by year",'FontSize',12)
+title("Number of published studies by year",'FontSize',14)
 
 % save the figure
 fig_name = 'Number_of_published_studies_by_year_titled.png';
